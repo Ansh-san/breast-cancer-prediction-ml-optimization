@@ -1,0 +1,140 @@
+{
+  "dataset": {
+    "name": "Wisconsin Diagnostic Breast Cancer (scikit-learn built-in copy)",
+    "samples": 569,
+    "features": 30,
+    "missing_values": 0,
+    "all_counts": {
+      "benign_0": 357,
+      "malignant_1": 212
+    },
+    "train_counts": {
+      "benign_0": 285,
+      "malignant_1": 170
+    },
+    "test_counts": {
+      "benign_0": 72,
+      "malignant_1": 42
+    },
+    "train_size": 455,
+    "test_size": 114,
+    "encoding": {
+      "0": "benign",
+      "1": "malignant (positive)"
+    }
+  },
+  "method": {
+    "split": "stratified 80% training / 20% test",
+    "random_seed": 42,
+    "cross_validation": "stratified 5-fold, shuffled",
+    "selection_metric": "malignant F1",
+    "candidates": 50,
+    "grid_fits_excluding_refit": 250,
+    "c_values": [
+      0.01,
+      0.1,
+      1,
+      10,
+      100
+    ],
+    "gamma_values_rbf": [
+      "scale",
+      0.001,
+      0.01,
+      0.1
+    ],
+    "class_weights": [
+      null,
+      "balanced"
+    ]
+  },
+  "baseline_training_cv": {
+    "accuracy": {
+      "mean": 0.9714285714285713,
+      "std": 0.00538349394018279
+    },
+    "precision": {
+      "mean": 0.9769459298871064,
+      "std": 0.021034707309092283
+    },
+    "recall": {
+      "mean": 0.9470588235294116,
+      "std": 0.03429971702850178
+    },
+    "f1": {
+      "mean": 0.9609865990024022,
+      "std": 0.008202524551695465
+    }
+  },
+  "best_params": {
+    "svc__C": 10,
+    "svc__class_weight": "balanced",
+    "svc__gamma": 0.01,
+    "svc__kernel": "rbf"
+  },
+  "best_training_cv_f1_mean": 0.9730241897406076,
+  "best_training_cv_f1_std": 0.011591717056551085,
+  "best_training_fold_f1_mean": 0.9843640122224644,
+  "test_metrics": {
+    "accuracy": 0.9912280701754386,
+    "precision_malignant": 1.0,
+    "recall_malignant": 0.9761904761904762,
+    "f1_malignant": 0.9879518072289156,
+    "specificity_benign": 1.0,
+    "balanced_accuracy": 0.9880952380952381,
+    "roc_auc": 0.9970238095238095,
+    "malignant_recall_wilson_95": [
+      0.8767879842623334,
+      0.9957845958655673
+    ]
+  },
+  "confusion_matrix_rows_actual_columns_predicted": [
+    [
+      72,
+      0
+    ],
+    [
+      1,
+      41
+    ]
+  ],
+  "confusion_counts": {
+    "true_negative": 72,
+    "false_positive": 0,
+    "false_negative": 1,
+    "true_positive": 41
+  },
+  "classification_report": {
+    "benign": {
+      "precision": 0.9863013698630136,
+      "recall": 1.0,
+      "f1-score": 0.993103448275862,
+      "support": 72.0
+    },
+    "malignant": {
+      "precision": 1.0,
+      "recall": 0.9761904761904762,
+      "f1-score": 0.9879518072289156,
+      "support": 42.0
+    },
+    "accuracy": 0.9912280701754386,
+    "macro avg": {
+      "precision": 0.9931506849315068,
+      "recall": 0.9880952380952381,
+      "f1-score": 0.9905276277523889,
+      "support": 114.0
+    },
+    "weighted avg": {
+      "precision": 0.9913482335976929,
+      "recall": 0.9912280701754386,
+      "f1-score": 0.9912054752585661,
+      "support": 114.0
+    }
+  },
+  "software": {
+    "python": "3.13.16",
+    "numpy": "2.3.5",
+    "scikit_learn": "1.6.1",
+    "matplotlib": "3.10.9"
+  }
+}
